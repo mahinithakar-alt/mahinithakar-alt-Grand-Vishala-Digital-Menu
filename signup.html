@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up | The Grand Vishala</title>
+  <meta name="description" content="Create your account for The Grand Vishala digital menu." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <main class="auth-page">
+
+    <!-- Brand panel -->
+    <aside class="brand-panel" aria-label="The Grand Vishala">
+      <div class="brand-arch">
+        <span class="brand-the">The</span>
+        <h1 class="brand-name">Grand Vishala</h1>
+        <div class="brand-rule" aria-hidden="true"></div>
+        <p class="brand-tagline">Create an account to save your details for a faster, smoother visit.</p>
+      </div>
+    </aside>
+
+    <!-- Sign up form -->
+    <section class="form-panel">
+      <div class="auth-card">
+        <h2>Create your account</h2>
+        <p class="subtitle">It takes less than a minute.</p>
+
+        <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+
+        <form id="signupForm" novalidate>
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <div class="input-wrap">
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name" required />
+            </div>
+            <p class="field-error" id="fullNameError"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address</label>
+            <div class="input-wrap">
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <p class="field-error" id="emailError"></p>
+          </div>
+
+          <div class="field">
+            <label for="mobile">Mobile number</label>
+            <div class="input-wrap">
+              <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" autocomplete="tel" inputmode="numeric" maxlength="14" required />
+            </div>
+            <p class="field-error" id="mobileError"></p>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap has-toggle">
+              <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required />
+              <button type="button" class="toggle-pw" data-toggle="password" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+            <p class="field-error" id="passwordError"></p>
+            <div class="strength" id="strength" hidden>
+              <div class="strength-bar"><span class="strength-fill" id="strengthFill"></span></div>
+              <p class="strength-text" id="strengthText"></p>
+            </div>
+            <p class="pw-hint">At least 8 characters with uppercase, lowercase, a number and a symbol.</p>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <div class="input-wrap has-toggle">
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password" required />
+              <button type="button" class="toggle-pw" data-toggle="confirmPassword" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+            <p class="field-error" id="confirmPasswordError"></p>
+          </div>
+
+          <button type="submit" class="btn" id="submitBtn">Create account</button>
+        </form>
+
+        <p class="switch-link">Already have an account? <a href="login.html">Log in</a></p>
+        <p class="dev-note">Frontend preview only. Accounts will be saved once the backend is connected.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

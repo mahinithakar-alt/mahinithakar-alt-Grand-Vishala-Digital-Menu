@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login | The Grand Vishala</title>
+  <meta name="description" content="Log in to The Grand Vishala digital menu." />
+
+  <!-- Fonts: Cormorant Garamond (display) + Jost (body). Fallbacks are set in auth.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <main class="auth-page">
+
+    <!-- Brand panel -->
+    <aside class="brand-panel" aria-label="The Grand Vishala">
+      <div class="brand-arch">
+        <span class="brand-the">The</span>
+        <h1 class="brand-name">Grand Vishala</h1>
+        <div class="brand-rule" aria-hidden="true"></div>
+        <p class="brand-tagline">Authentic Punjabi flavours and Indian classics, served with warmth.</p>
+      </div>
+    </aside>
+
+    <!-- Login form -->
+    <section class="form-panel">
+      <div class="auth-card">
+        <h2>Welcome back</h2>
+        <p class="subtitle">Log in to continue to The Grand Vishala.</p>
+
+        <!-- Form-level message (errors, success, info) -->
+        <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="email">Email address</label>
+            <div class="input-wrap">
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <p class="field-error" id="emailError"></p>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap has-toggle">
+              <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required />
+              <button type="button" class="toggle-pw" data-toggle="password" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+            <p class="field-error" id="passwordError"></p>
+          </div>
+
+          <div class="row-between">
+            <label class="check">
+              <input type="checkbox" id="remember" name="remember" />
+              Remember me
+            </label>
+            <a href="#" id="forgotLink">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn" id="submitBtn">Log in</button>
+        </form>
+
+        <p class="switch-link">New to The Grand Vishala? <a href="signup.html">Create an account</a></p>
+        <p class="dev-note">Frontend preview only. Account login will work once the backend is connected.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>
